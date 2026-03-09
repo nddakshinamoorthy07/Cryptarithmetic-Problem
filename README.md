@@ -1,6 +1,6 @@
 <h1>ExpNo 8 : Solve Cryptarithmetic Problem,a CSP(Constraint Satisfaction Problem) using Python</h1> 
-<h3>Name:               </h3>
-<h3>Register Number/Staff Id:       </h3>
+<h3>Name: DAKSHINA MOORTHY N D         </h3>
+<h3>Register Number: 212224230049 </h3>
 <H3>Aim:</H3>
 <p>
     To solve Cryptarithmetic Problem,a CSP(Constraint Satisfaction Problem) using Python
@@ -72,11 +72,50 @@ Begin<br>
    return false<br>
 End<br>
 <hr>
+
+# PROGRAM 
+
+```
+
+from itertools import permutations
+
+def solve_cryptarithmetic():
+    letters = ('B','A','S','E','L','G','M')
+    
+    for perm in permutations(range(10), len(letters)):
+        B,A,S,E,L,G,M = perm
+        
+        # Leading letters should not be zero
+        if B == 0 or G == 0:
+            continue
+        
+        BASE = 1000*B + 100*A + 10*S + E
+        BALL = 1000*B + 100*A + 10*L + L
+        GAMES = 10000*G + 1000*A + 100*M + 10*E + S
+        
+        if BASE + BALL == GAMES:
+            print("Solution Found:")
+            print("B =",B,"A =",A,"S =",S,"E =",E,"L =",L,"G =",G,"M =",M)
+            print("BASE =",BASE)
+            print("BALL =",BALL)
+            print("GAMES =",GAMES)
+            return
+
+solve_cryptarithmetic()
+
+```
+
+
 <h2>Sample Input and Output:</h2>
 SEND = 9567<br>
 MORE = 1085<br>
 <hr>
 MONEY = 10652<br>
 <hr>
+
+# OUTPUT
+
+<img width="493" height="299" alt="image" src="https://github.com/user-attachments/assets/99deb12b-bd46-4375-8c64-6a036ccd6e59" />
+
 <h2>Result:</h2>
 <p> Thus a Cryptarithmetic Problem was solved using Python successfully</p>
